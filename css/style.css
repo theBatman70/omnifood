@@ -20,10 +20,6 @@
 /* NAVIGATION */
 /* ****************** */
 
-.main-nav {
-  overflow: hidden;
-}
-
 .main-nav-list {
   list-style: none;
   display: flex;
@@ -491,6 +487,7 @@
 .cta-text-box .heading-secondary {
   color: #45260a;
   margin-bottom: 3.2rem;
+  line-height: 1.3;
 }
 
 .cta-text {
