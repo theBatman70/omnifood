@@ -112,12 +112,15 @@
 
   /* MOBILE NAVIGATION */
 
-  header {
+  .header {
     position: relative;
+    overflow: visible;
   }
 
   .btn-mobile-nav {
     display: block;
+    /* Make the button stay on top | required for the focus indication */
+    z-index: 9999;
   }
 
   .main-nav-list {

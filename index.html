@@ -25,6 +25,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script defer src="script.js"></script>
   </head>
 
   <body>
@@ -32,11 +33,13 @@
       <img class="logo" alt="Omnifood Logo" src="img/omnifood-logo.png" />
       <nav class="main-nav nav">
         <ul class="main-nav-list">
-          <li><a href="#" class="main-nav-link">How it works</a></li>
-          <li><a href="#" class="main-nav-link">Meals</a></li>
-          <li><a href="#" class="main-nav-link">Testimonials</a></li>
-          <li><a href="#" class="main-nav-link">Pricing</a></li>
-          <li><a href="#" class="main-nav-link nav-cta">Try for free</a></li>
+          <li><a href="#how" class="main-nav-link">How it works</a></li>
+          <li><a href="#meals" class="main-nav-link">Meals</a></li>
+          <li>
+            <a href="#testimonials" class="main-nav-link">Testimonials</a>
+          </li>
+          <li><a href="#pricing" class="main-nav-link">Pricing</a></li>
+          <li><a href="#cta" class="main-nav-link nav-cta">Try for free</a></li>
         </ul>
         <button class="btn-mobile-nav">
           <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
@@ -101,7 +104,7 @@
         </div>
       </section>
 
-      <section class="section-how">
+      <section class="section-how" id="how">
         <!-- Section Heading -->
         <div class="container">
           <span class="sub-heading">How it works</span>
@@ -171,7 +174,7 @@
         </div>
       </section>
 
-      <section class="section-meals">
+      <section class="section-meals" id="meals">
         <div class="container center-text">
           <span class="sub-heading">Meals</span>
           <h2 class="heading-secondary">
@@ -281,7 +284,7 @@
         </div>
       </section>
 
-      <section class="section-testimonials grid--2--cols">
+      <section class="section-testimonials grid--2--cols" id="testimonials">
         <div class="testimonial-container">
           <span class="sub-heading">Testimonials</span>
           <h2 class="heading-secondary">Once you try, you can't go back!</h2>
@@ -367,7 +370,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section class="section-pricing" id="pricing">
         <div class="container">
           <span class="sub-heading">Pricing</span>
           <h2 class="heading-secondary">Eat well without breaking your bank</h2>
@@ -473,7 +476,7 @@
         </div>
       </section>
 
-      <section class="section-cta">
+      <section class="section-cta" id="cta">
         <div class="container">
           <div class="cta">
             <div class="cta-text-box">
@@ -553,7 +556,8 @@
             </li>
           </ul>
           <p class="copyright">
-            Copyright &copy; 2027 Omnifood, Inc. All rights reserved
+            Copyright &copy; <span class="year"></span> Omnifood, Inc. All
+            rights reserved
           </p>
         </div>
         <div class="address-col">
