@@ -7,18 +7,19 @@ yearEl.textContent = new Date().getFullYear();
 // Make mobile navigation work
 const navButton = document.querySelector(".btn-mobile-nav");
 
-navButton.addEventListener("click", closeMobileNav);
+navButton.addEventListener("click", toggleMobileNav);
 
 // Close mobile navigation on navigate
 const mainNavLinks = document.querySelectorAll(".main-nav-link:link");
 
 mainNavLinks.forEach(function (link) {
-  link.addEventListener("click", closeMobileNav);
+  link.addEventListener("click", toggleMobileNav);
 });
 
-function closeMobileNav() {
+function toggleMobileNav() {
   const headerEle = document.querySelector(".header");
-  headerEle.classList.toggle("nav-open");
+  const isNavOpen = headerEle.classList.toggle("nav-open");
+  document.body.classList.toggle("disable-scroll", isNavOpen);
 }
 
 // Fixing flexbox gap property missing in some Safari versions

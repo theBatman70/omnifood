@@ -9,9 +9,6 @@
   background-color: #fdf2e9;
   padding-inline: 4.8rem;
 
-  /* Fix overflow caused by mobile navigation interface */
-  overflow-x: hidden;
-
   /* Because we want header to be sticky */
   height: 9.6rem;
 }

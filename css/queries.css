@@ -113,8 +113,8 @@
   /* MOBILE NAVIGATION */
 
   .header {
+    /* Fix overflow caused by mobile navigation interface */
     position: relative;
-    overflow: visible;
   }
 
   .btn-mobile-nav {
@@ -215,6 +215,8 @@
     }
   }
 
+  /* For Phones */
+
   @media (max-width: 34rem) {
     .grid--2--cols,
     .grid--3--cols,
@@ -227,7 +229,7 @@
     }
 
     .hero-img {
-      width: 80%;
+      width: 85%;
     }
 
     div.step-text-box:nth-child(1) {
