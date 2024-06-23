@@ -1,15 +1,25 @@
-///////////////////////////////////////////////////////////
+/////////////
 
-// Set Current Year
+// SET CURRENT YEAR
+
 const yearEl = document.querySelector(".year");
 yearEl.textContent = new Date().getFullYear();
 
+//////////////
+
+
+///////////////////////
+
+// MOBILE NAVIGATION BUTTONS SCRIPTING
+
 // Make mobile navigation work
+
 const navButton = document.querySelector(".btn-mobile-nav");
 
 navButton.addEventListener("click", toggleMobileNav);
 
 // Close mobile navigation on navigate
+
 const mainNavLinks = document.querySelectorAll(".main-nav-link:link");
 
 mainNavLinks.forEach(function (link) {
@@ -22,24 +32,53 @@ function toggleMobileNav() {
   document.body.classList.toggle("disable-scroll", isNavOpen);
 }
 
-// Fixing flexbox gap property missing in some Safari versions
-function checkFlexGap() {
-  var flex = document.createElement("div");
-  flex.style.display = "flex";
-  flex.style.flexDirection = "column";
-  flex.style.rowGap = "1px";
+////////////////////////
 
-  flex.appendChild(document.createElement("div"));
-  flex.appendChild(document.createElement("div"));
+///////////////////////////////
+// Sticky navigation
+//////////////////////////////
 
-  document.body.appendChild(flex);
-  var isSupported = flex.scrollHeight === 1;
-  flex.parentNode.removeChild(flex);
-  console.log(isSupported);
+const sectionHeroEl = document.querySelector('.section-hero')
 
-  if (!isSupported) document.body.classList.add("no-flexbox-gap");
-}
-checkFlexGap();
+const obs = new IntersectionObserver(function (entries) {
+  const ent = entries[0];
+  if (ent.isIntersecting === false) {
+    document.querySelector('body').classList.add('sticky-nav');
+  }
+  if (ent.isIntersecting === true) {
+    document.querySelector('body').classList.remove('sticky-nav');
+  }
+}, {
+  // In the viewport
+  root: null,
+  threshold: 0,
+  rootMargin: '-80px'
+});
+obs.observe(sectionHeroEl);
+
+
+
+
+//////////////////////////////
+
+// // Fixing flexbox gap property missing in some Safari versions
+// function checkFlexGap() {
+//   var flex = document.createElement("div");
+//   flex.style.display = "flex";
+//   flex.style.flexDirection = "column";
+//   flex.style.rowGap = "1px";
+
+//   flex.appendChild(document.createElement("div"));
+//   flex.appendChild(document.createElement("div"));
+
+//   document.body.appendChild(flex);
+//   var isSupported = flex.scrollHeight === 1;
+//   flex.parentNode.removeChild(flex);
+//   console.log(isSupported);
+
+//   if (!isSupported) document.body.classList.add("no-flexbox-gap");
+// }
+// checkFlexGap();
 
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
 
